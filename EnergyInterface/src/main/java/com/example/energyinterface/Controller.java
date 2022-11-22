@@ -14,7 +14,7 @@ public class Controller {
     private Energy energy = new Energy();
 
     /**
-     * кнопка добавить - выводит информацию об энеогетике в textArea
+     * кнопка добавить - выводит информацию об энергетике в textArea
      */
     @FXML
     private Button button_add;
@@ -26,7 +26,7 @@ public class Controller {
     private TextArea textArea;
 
     /**
-     * для ввода брена
+     * для ввода бренда
      */
     @FXML
     private TextField textField_Brand;
@@ -96,35 +96,42 @@ public class Controller {
          */
         energy.setTaste(textField_Taste.getText());
 
-        /**
-         * Задали цену
-         */
-        energy.setPrice(Double.parseDouble(textField_Price.getText()));
+        try{
+            /**
+             * Задали цену
+             */
+            energy.setPrice(Double.parseDouble(textField_Price.getText()));
 
-        /**
-         * Задали энергетическую ценность
-         */
-        energy.setEnergyValue(Double.parseDouble(textField_EnergyValue.getText()));
+            /**
+             * Задали энергетическую ценность
+             */
+            energy.setEnergyValue(Double.parseDouble(textField_EnergyValue.getText()));
 
-        /**
-         * Задали кофеин
-         */
-        energy.setСaffeine(Double.parseDouble(textField_Сaffeine.getText()));
+            /**
+             * Задали кофеин
+             */
+            energy.setСaffeine(Double.parseDouble(textField_Сaffeine.getText()));
 
-        /**
-         * Задали таурин
-         */
-        energy.setTaurine(Double.parseDouble(textField_Taurine.getText()));
+            /**
+             * Задали таурин
+             */
+            energy.setTaurine(Double.parseDouble(textField_Taurine.getText()));
 
-        /**
-         * Задали объем
-         */
-        energy.setVolume(Double.parseDouble(textField_Volume.getText()));
+            /**
+             * Задали объем
+             */
+            energy.setVolume(Double.parseDouble(textField_Volume.getText()));
 
-        /**
-         * выводим всю информацию о энергетике
-         */
-        textArea.appendText(energy.AllInformation());
+            /**
+             * выводим всю информацию об энергетике
+             */
+            textArea.appendText(energy.AllInformation());
+        }
+        catch (IllegalArgumentException e){
+            textArea.setText(e.getMessage());
+        }
+
+
     }
 
 
