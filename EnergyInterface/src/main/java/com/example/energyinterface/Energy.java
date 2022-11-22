@@ -90,7 +90,19 @@ public class Energy {
      * @param energyValue энергетическая ценность
      */
     public void setEnergyValue(double energyValue) {
-        EnergyValue = energyValue;
+       /* try {
+            if (energyValue > 0) {
+                EnergyValue = energyValue;
+            }
+        }
+        catch ()*/
+        if (energyValue > 0)
+        {
+            EnergyValue = energyValue;
+        }
+        else {
+            throw new IllegalArgumentException("Значение не может быть меньше нуля");
+        }
     }
 
     /**
@@ -106,7 +118,13 @@ public class Energy {
      * @param сaffeine кофеин
      */
     public void setСaffeine(double сaffeine) {
-        Сaffeine = сaffeine;
+        if (сaffeine > 0)
+        {
+            Сaffeine = сaffeine;
+        }
+        else {
+            throw new IllegalArgumentException("Значение не может быть меньше нуля");
+        }
     }
 
     /**
@@ -122,7 +140,13 @@ public class Energy {
      * @param taurine таурин
      */
     public void setTaurine(double taurine) {
-        Taurine = taurine;
+        if (taurine > 0)
+        {
+            Taurine = taurine;
+        }
+        else {
+            throw new IllegalArgumentException("Значение не может быть меньше нуля");
+        }
     }
 
     /**
@@ -138,7 +162,13 @@ public class Energy {
      * @param price цена
      */
     public void setPrice(double price) {
-        Price = price;
+        if (price > 0)
+        {
+            Price = price;
+        }
+        else {
+            throw new IllegalArgumentException("Значение не может быть меньше нуля");
+        }
     }
 
     /**
@@ -154,7 +184,14 @@ public class Energy {
      * @param volume объем
      */
     public void setVolume(double volume) {
-        Volume = volume;
+        if (volume > 0)
+        {
+            Volume = volume;
+        }
+        else {
+            throw new IllegalArgumentException("Значение не может быть меньше нуля");
+        }
+
     }
 
     ////
